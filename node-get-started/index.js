@@ -30,7 +30,8 @@ bucketPromise
       Bucket: bucketName,
       Key: keyName,
       Body:
-        'Hello World! create time: ' + moment(Date.now()).format('MM/DD/YYYY')
+        'Hello World! create time: ' +
+        moment(Date.now()).format('MM/DD/YYYY , h:mm:ss a')
     };
     // Create object upload promise
     let uploadPromise = new AWS.S3({ apiVersion: '2006-03-01' })

@@ -10,6 +10,7 @@ let s3 = new AWS.S3();
 let s3Name = '';
 
 // 异步获取bucket的列表, 然后取里面的文件就可以了
+// 这里我读取的是第一个bucket, 因为就扔了一个bucket在里面
 s3.listBuckets()
   .promise()
   .then(lists => {
