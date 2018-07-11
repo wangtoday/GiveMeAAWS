@@ -1,5 +1,6 @@
 let AWS = require('aws-sdk');
 let uuid = require('uuid');
+let moment = require('moment');
 
 // set the credentials
 var credentials = new AWS.SharedIniFileCredentials({ profile: 'mubaba' });
@@ -7,9 +8,9 @@ AWS.config.credentials = credentials;
 
 // create a unique bucket name, will be display in the s3 bucket
 let bucketName = 'mubaba-node-sdk-sample' + uuid.v4();
-console.log('show the bucket Name', bucketName);
 
 bucketName = 'mubaba-node-sdk-create-sample-2018';
+console.log('show the bucket Name', bucketName);
 // however, 我改变注意, 不论运行多少次我这个文件, 我只要生成一个 demo 的bucket
 // 后面的这个promise, 如果已经存在了这个bucket 也不会报错, 会接着运行
 
@@ -28,7 +29,8 @@ bucketPromise
     let objectParams = {
       Bucket: bucketName,
       Key: keyName,
-      Body: 'Hello World!'
+      Body:
+        'Hello World! create time: ' + moment(Date.now()).format('MM/DD/YYYY')
     };
     // Create object upload promise
     let uploadPromise = new AWS.S3({ apiVersion: '2006-03-01' })
