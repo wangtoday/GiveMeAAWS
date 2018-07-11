@@ -1,0 +1,18 @@
+{
+  "name": "awsnodesample",
+  "version": "1.0.1",
+  "description": "这就是一个follow aws教程的简单node程序,使用aws-sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mubaba你真碉"
+  ],
+  "author": "mubaba",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.271.1",
+    "uuid": "^3.3.2"
+  }
+}
